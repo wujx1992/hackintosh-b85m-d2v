@@ -32,11 +32,12 @@
 # 优点
 ![硬解](screenshots/decode.png)
 1. 几乎精简了所有的东西，Clover设置里几乎能去掉的都去掉了，仅仅放了6个核心kext。5个传感器kext不需要可以删除,在EFI->CLOVER->kexts->Other。分别是FakeSMC_ACPISensors.kext、FakeSMC_CPUSensors.kext、FakeSMC_GPUSensors.kext、FakeSMC_LPCSensors.kext、FakeSMC_SMMSensors.kext
-2. 修改了FakeSMC.kext支持原声电源管理AppleALC。
+2. <del>修改了FakeSMC.kext支持原声电源管理AppleALC。</del>通过dsdt补丁是实现支持原生电源管理
 3. 设置机型为iMac Pro1.1，AMD400/500系列支持硬解。听说10.15.2这个福利没有了
 4. 可以休眠很赞
+5. 支持USB3.0
 
 # 缺点和不足
-1. 没有好好的弄USB3.0，USB传输最大速度480 Mb/秒,别人都是5 Gb/秒😅。
+1. <del>没有好好的弄USB3.0，USB传输最大速度480 Mb/秒,别人都是5 Gb/秒😅。</del>通过SSDT-UIAC.aml文件实现
    ![声卡layout-id](screenshots/devices.png)
 2. 声卡前置和后置不能自动切换，你得自己在系统设置->声音->输入中自己选。有一定的几率开机会没声音(也许是AppleALC.kext驱动的问题，等更新)，重启就好😫。或者自己找一下layout-id [Github连接](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs)，有耐心也可以自己编译声卡驱动，记得给我也发一份
