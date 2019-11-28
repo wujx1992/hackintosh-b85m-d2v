@@ -37,8 +37,8 @@
 默认设置机型是iMac Pro 1.1，如果你不是免驱A卡，可以设置为iMac15.1。
 - 装完把引导参数里-v去掉，也就是啰嗦模式
 - USB3.0
-定制了USB端口，每个人的USB情况都不一样，所以如果USB工作不正常，删除SSDT-UIAC.aml文件（EFI->CLOVER->ACPI->patched->SSDT-UIAC.aml）。这个是定制USB端口文件。
-因为10.14.x之后的版本mac只支持16个端口，而我们一般有20个，所以有2种方法。第一种打去除20个端口补丁，缺点是每个版本更新都可能失效。第二种自己定制USB端口把没用到的端口去除，缺点是比较硬核。[传送门](https://blog.daliansky.net/Intel-FB-Patcher-tutorial-and-insertion-pose.html)
+定制了USB端口，每个人的USB情况都不一样，所以如果USB工作不正常，删除SSDT-UIAC.aml文件（EFI->CLOVER->ACPI->patched->SSDT-UIAC.aml），这个是定制USB端口文件。
+因为10.14.x之后的版本mac os只支持16个端口，而我们一般有20个，所以有2种方法。第一种使用去除16个端口限制补丁，缺点是每个版本更新都可能失效。第二种自己定制USB端口把没用到的端口去除，缺点是比较硬核。[传送门](https://blog.daliansky.net/Intel-FB-Patcher-tutorial-and-insertion-pose.html)
 
 # 优点
 ![硬解](screenshots/decode.png)
@@ -49,6 +49,6 @@
 5. 支持USB3.0
 
 # 缺点和不足
-1. 通过SSDT-UIAC.aml文件实现具有唯一性
+1. USB定制由于通过SSDT-UIAC.aml文件实现，所以具有唯一性
    ![声卡layout-id](screenshots/devices.png)
 2. 声卡前置和后置不能自动切换，你得自己在系统设置->声音->输入中自己选。有一定的几率开机会没声音(也许是AppleALC.kext驱动的问题，等更新)，重启就好😫。或者自己找一下layout-id [Github连接](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs)，有耐心也可以自己编译声卡驱动，记得给我也发一份
