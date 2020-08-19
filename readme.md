@@ -22,7 +22,7 @@
 
 ## 使用软件
 ```
-1. OpenCore Configurator 2.10.0。0
+1. OpenCore Configurator 2.10.0.0
 ```
 ## 一些注意事项
 1. 如果你的CPU核显不是hd4600或者不在乎核显加速,将设备属性设置(DeviceProperties)中PciRoot(0x0)/Pci(0x2,0x0)删除或者根据自己核显信息修改
