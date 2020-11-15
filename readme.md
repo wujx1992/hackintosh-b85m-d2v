@@ -1,6 +1,6 @@
 # 我的黑苹果Clover EFI
-1. 使用OpenCore 0.6.2正式版
-2. 兼容10.15.7
+1. 更新为OpenCore 0.6.3正式版
+2. 兼容Mac OS 11.0.1
 3. 在Release页下载EFI
 
 ## 配置
@@ -21,7 +21,7 @@
 
 ## 使用软件
 ```
-1. OpenCore Configurator 2.15.2.0
+1. OpenCore Configurator 2.18.0
 ```
 ## 一些注意事项
 1. 如果没有声音，请修改声卡layout-id,设备属性设置(DeviceProperties)中PciRoot(0x0)/Pci(0x1B,0x0)更改layout-id
